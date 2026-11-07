@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SchoolHub multi-school management platform demo">
+<title>SchoolHub | Multi-school platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-symbol">S</span><span><b>SchoolHub</b><small>EDUCATION PLATFORM</small></span></a>
+    <div class="tenant-switch"><label>WORKSPACE</label><select id="tenantSelect" aria-label="Select school workspace"></select></div>
+    <div class="profile"><div class="profile-avatar" id="profileAvatar">A</div><div><b id="profileName">Platform Owner</b><small id="profileRole">Super administrator</small></div><button id="profileMenu" title="Switch demo role">⋯</button></div>
+    <nav id="navigation">
+      <div class="nav-label">OVERVIEW</div>
+      <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+      <button class="nav-item owner-only" data-page="schools"><span>⌂</span> Schools <i id="schoolCount" class="nav-count">3</i></button>
+      <button class="nav-item" data-page="analytics"><span>▥</span> Reports & analytics</button>
+      <div class="nav-label">SCHOOL MANAGEMENT</div>
+      <button class="nav-item" data-page="students"><span>♙</span> Students</button>
+      <button class="nav-item" data-page="staff"><span>♧</span> Staff & teachers</button>
+      <button class="nav-item" data-page="admissions"><span>↗</span> Admissions <i class="nav-count" id="admissionCount">4</i></button>
+      <button class="nav-item" data-page="classes"><span>▤</span> Classes & subjects</button>
+      <button class="nav-item" data-page="attendance"><span>◷</span> Attendance</button>
+      <button class="nav-item" data-page="timetable"><span>▦</span> Timetable</button>
+      <button class="nav-item" data-page="exams"><span>✎</span> Exams & results</button>
+      <div class="nav-label">COMMUNICATION & FINANCE</div>
+      <button class="nav-item" data-page="fees"><span>＄</span> Fees & payments</button>
+      <button class="nav-item" data-page="parents"><span>♡</span> Parents & guardians</button>
+      <button class="nav-item" data-page="announcements"><span>◉</span> Announcements</button>
+      <button class="nav-item" data-page="website"><span>▣</span> Website editor</button>
+      <div class="nav-label">ADMINISTRATION</div>
+      <button class="nav-item owner-only" data-page="subscriptions"><span>◇</span> Subscriptions</button>
+      <button class="nav-item" data-page="users"><span>♙</span> Users & permissions</button>
+      <button class="nav-item" data-page="settings"><span>⚙</span> Settings</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-card"><b>Need a hand?</b><small>Visit the platform help centre.</small><a href="#" id="helpLink">Get support ↗</a></div><small>SchoolHub demo · v1.0</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button id="mobileMenu" class="icon-btn mobile-only">☰</button><div class="breadcrumbs">Workspace <span>/</span> <b id="crumb">Dashboard</b></div><div class="top-actions"><span class="status-dot">Demo workspace</span><button class="icon-btn" id="notifications" title="Notifications">♧<i></i></button><button class="top-avatar" id="topAvatar">A</button></div></header>
+    <section class="content">
+      <div class="page-heading"><div><div class="eyebrow" id="pageEyebrow">YOUR SCHOOL AT A GLANCE</div><h1 id="pageTitle">Dashboard</h1><p id="pageDescription">Welcome back. Here is what is happening across your workspace.</p></div><div class="heading-actions" id="headingActions"><button class="btn btn-light" id="exportOverview">↓ Export overview</button><button class="btn btn-primary" id="quickAdd">＋ Add new</button></div></div>
+      <div id="pageContent"></div>
+      <footer class="app-footer"><span>© <span id="year"></span> SchoolHub</span><span>Designed for better school administration · Demo environment</span></footer>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><span class="eyebrow">SCHOOLHUB WORKSPACE</span><h2 id="modalTitle">Add record</h2></div><button class="icon-btn" id="closeModal">×</button></div><form id="recordForm"><div id="formFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="btn btn-light" id="cancelModal">Cancel</button><button class="btn btn-primary" type="submit">Save record</button></div></form></div></div>
+<script src="app.js"></script>
+</body></html>
